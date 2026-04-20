@@ -1,0 +1,13 @@
+<h2>API data</h2>
+
+@if (loading) {
+  <p>Data laden...</p>
+} @else if (errorMessage) {
+  <p>{{ errorMessage }}</p>
+} @else {
+  <ul>
+    @for (race of races; track race.id) {
+      <li>{{ race.title }}</li>
+    }
+  </ul>
+}

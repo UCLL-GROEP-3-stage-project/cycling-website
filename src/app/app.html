@@ -1,0 +1,12 @@
+<header class="page-header">
+  <h1>Cycling website</h1>
+  <nav>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="/races" routerLinkActive="active">Races</a>
+    <a routerLink="/api-data" routerLinkActive="active">API data</a>
+  </nav>
+</header>
+
+<main>
+  <router-outlet />
+</main>

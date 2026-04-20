@@ -1,0 +1,7 @@
+[
+  { "id": 1, "title": "Tour de France" },
+  { "id": 2, "title": "Giro d'Italia" },
+  { "id": 3, "title": "Vuelta a España" },
+  { "id": 4, "title": "Paris-Roubaix" },
+  { "id": 5, "title": "Ronde van Vlaanderen" }
+]
