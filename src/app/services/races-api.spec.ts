@@ -21,7 +21,7 @@ describe('RacesApi', () => {
     httpTestingController.verify();
   });
 
-  it('should call posts endpoint', () => {
+  it('should call races endpoint', () => {
     service.getRaces().subscribe((races) => {
       expect(races.length).toBe(1);
       expect(races[0].title).toBe('Tour de France');
