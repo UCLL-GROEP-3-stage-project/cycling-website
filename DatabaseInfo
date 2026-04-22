@@ -1,0 +1,31 @@
+Zijn bij eindafrekening de score volgens de volgorde? of via iets anders.
+
+
+Tabel:Speler (dit moet niet in de database staan.)
+    (-unieke ID)
+    -Naam
+    -Positie?
+    -Lijst van score per rit
+    -Lijst van score per cyclist
+
+
+
+
+
+tabel: Race (Moet in database)
+    (-unieke ID)
+    -Naam van de race
+    -Lijst van Ritten
+    -Lijst alle deelnemers
+    -lijsten laatste stage van alle 4 de truienklassementen (zie nog hoe die score werkt).
+
+
+Tabel: Rit (Moet in database)
+    (-unieke ID)
+    -naam van rit
+    -Lijst top 25 Cyclist
+    -Lijst alle 4 de truiwinnaars (iedere  trui is 10 punten waard)
+
+tabel: Cyclist (Moet in database)
+    -unieke ID
+    -Naam
