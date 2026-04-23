@@ -1,0 +1,9 @@
+#races li {
+    cursor: pointer;
+    padding: 5px;
+}
+
+#races li.selected {
+    background: #ffd700;
+    font-weight: bold;
+}

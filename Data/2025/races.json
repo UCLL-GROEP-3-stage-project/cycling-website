@@ -1,0 +1,16 @@
+{
+  "Race": [
+    {
+      "race_id": 1,
+      "name": "Tour de France"
+    },
+    {
+      "race_id": 2,
+      "name": "Giro d'Italia"
+    },
+    {
+      "race_id": 3,
+      "name": "Vuelta a España"
+    }
+  ]
+}

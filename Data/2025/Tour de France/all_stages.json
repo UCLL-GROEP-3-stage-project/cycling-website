@@ -1,0 +1,25 @@
+{
+  "Stage": [
+    { "stage_id": 1, "name": "Stage 1 | Lille Métropole - Lille Métropole" },
+    { "stage_id": 2, "name": "Stage 2 | Lauwin-Planque - Boulogne-sur-Mer" },
+    { "stage_id": 3, "name": "Stage 3 | Valenciennes - Dunkerque" },
+    { "stage_id": 4, "name": "Stage 4 | Amiens Métropole - Rouen" },
+    { "stage_id": 5, "name": "Stage 5 (ITT) | Caen - Caen" },
+    { "stage_id": 6, "name": "Stage 6 | Bayeux - Vire Normandie" },
+    { "stage_id": 7, "name": "Stage 7 | Saint-Malo - Mûr-de-Bretagne (Guerlédan)" },
+    { "stage_id": 8, "name": "Stage 8 | Saint-Méen-le-Grand - Laval (Espace Mayenne)" },
+    { "stage_id": 9, "name": "Stage 9 | Chinon - Châteauroux" },
+    { "stage_id": 10, "name": "Stage 10 | Ennezat - Le Mont-Dore Puy de Sancy" },
+    { "stage_id": 11, "name": "Stage 11 | Toulouse - Toulouse" },
+    { "stage_id": 12, "name": "Stage 12 | Auch - Hautacam" },
+    { "stage_id": 13, "name": "Stage 13 (ITT) | Loudenvielle - Peyragudes" },
+    { "stage_id": 14, "name": "Stage 14 | Pau - Luchon-Superbagnères" },
+    { "stage_id": 15, "name": "Stage 15 | Muret - Carcassonne" },
+    { "stage_id": 16, "name": "Stage 16 | Montpellier - Mont Ventoux" },
+    { "stage_id": 17, "name": "Stage 17 | Bollène - Valence" },
+    { "stage_id": 18, "name": "Stage 18 | Vif - Courchevel (Col de la Loze)" },
+    { "stage_id": 19, "name": "Stage 19 | Albertville - La Plagne" },
+    { "stage_id": 20, "name": "Stage 20 | Nantua - Pontarlier" },
+    { "stage_id": 21, "name": "Stage 21 | Mantes-la-Ville - Paris (Champs-Élysées)" }
+  ]
+}
