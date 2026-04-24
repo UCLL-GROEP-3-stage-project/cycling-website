@@ -1,0 +1,14 @@
+{
+  "StageResult": [
+    { "position": 1, "cyclist_id": 78 },
+    { "position": 2, "cyclist_id": 74 },
+    { "position": 3, "cyclist_id": 16 },
+    { "position": 4, "cyclist_id": 64 },
+    { "position": 5, "cyclist_id": 148 },
+    { "position": 6, "cyclist_id": 76 },
+    { "position": 7, "cyclist_id": 149 },
+    { "position": 8, "cyclist_id": 141 },
+    { "position": 9, "cyclist_id": 151 },
+    { "position": 10, "cyclist_id": 109 }
+  ]
+}
