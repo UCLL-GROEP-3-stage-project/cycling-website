@@ -1,3 +1,6 @@
+//Maakt cyclist selector ontzichtbaar
+document.getElementById("cyclistSelector").style.display = "none";
+
 //localstorage data ophalen
 let savedRace  = localStorage.getItem("selectedRace");
 
@@ -13,8 +16,7 @@ if (savedRace) {
 
 
 
-//Maakt cyclist selector ontzichtbaar
-document.getElementById("cyclistSelector").style.display = "none";
+
 
 //Maakt players aan
 let players = [];

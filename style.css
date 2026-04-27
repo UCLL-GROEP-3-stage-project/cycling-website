@@ -1,9 +1,50 @@
+/* Basis items */
 #races li {
     cursor: pointer;
-    padding: 5px;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border-radius: 10px;
+    background: #f4f6f8;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+/* Hover effect */
+#races li:hover {
+    background: #e6f0ff;
+    transform: translateX(5px);
+}
+
+/* Actieve (geselecteerde) race */
 #races li.selected {
     background: #ffd700;
+    color: #222;
     font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Klik animatie */
+#races li:active {
+    transform: scale(0.98);
+}
+
+/* Optioneel: kleine arrow rechts */
+#races li::after {
+    content: "→";
+    opacity: 0.5;
+    transition: 0.2s;
+}
+
+/* Arrow wordt duidelijker bij hover */
+#races li:hover::after {
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+/* Smooth selectie overgang */
+#races li.selected::after {
+    content: "✔";
+    opacity: 1;
 }
