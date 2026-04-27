@@ -10,6 +10,7 @@ let direction = 1; // 1 voor vooruit, -1 voor achteruit
 
 //Moet nog manier hebben om van vorige pagina de race_name te ontvangen.
 
+let name_race = "Tour de France";
 
 
 
@@ -36,9 +37,9 @@ function maakPlayers() {
   document.getElementById("playerForm").style.display = "none";
   document.getElementById("cyclistSelector").style.display = "block";
 
-  loadCyclists({name: "Tour de France"});
+  loadCyclists({name: name_race});
 
-  let game = new Game("Tour de France", players);
+  let game = new Game(name_race, players);
   localStorage.setItem("game", JSON.stringify(game));
 
   console.log("Game initialized:", game);
@@ -71,9 +72,6 @@ function loadCyclists(Race) {
         li.addEventListener("click", () => {
           assignCyclistToPlayer(players, cyclist);
           li.remove();
-          console.log(players);
-
-          count++;
         });
         list.appendChild(li);
       });
@@ -108,8 +106,10 @@ function assignCyclistToPlayer(players, cyclist) {
       const allFull = players.every(player => player.list_benched.filter(x => x != null).length === 6);
       if(allFull) {
 
-        let game = new Game("Tour de France", players);
+        let game = new Game(name_race, players);
+        await game.init();
         console.log("Game initialized:", game);
+        localStorage.setItem("game", JSON.stringify(game));
 
         //Pas dit aan naar de juiste pagina!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         window.location.href = "../index.html";
