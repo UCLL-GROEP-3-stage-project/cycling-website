@@ -5,6 +5,10 @@ document.getElementById("cyclistSelector").style.display = "none";
 let players = [];
 
 
+//Moet nog manier hebben om van vorige pagina de race_name te ontvangen.
+
+
+
 
 import { Player } from "../Classes/player.js";
 import { Game } from "../Classes/game.js";
@@ -25,14 +29,13 @@ function maakPlayers() {
   players.push(new Player(p4));
 
   document.getElementById("playerForm").style.display = "none";
-  loadCyclists({name: "Tour de France"});
   document.getElementById("cyclistSelector").style.display = "block";
+
+  loadCyclists({name: "Tour de France"});
 
   let game = new Game("Tour de France", players);
 
   console.log("Game initialized:", game);
-
-  console.log(players);
 }
 
 
