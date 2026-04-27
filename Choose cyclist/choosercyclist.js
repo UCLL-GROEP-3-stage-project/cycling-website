@@ -1,3 +1,18 @@
+//localstorage data ophalen
+let savedRace  = localStorage.getItem("selectedRace");
+
+let name_race;
+
+if (savedRace) {
+  name_race = JSON.parse(savedRace);
+  console.log("Race geladen:", name_race);
+  localStorage.removeItem("selectedRace");
+} else {
+  console.log("Geen opgeslagen race gevonden");
+}
+
+
+
 //Maakt cyclist selector ontzichtbaar
 document.getElementById("cyclistSelector").style.display = "none";
 
@@ -8,9 +23,7 @@ let players = [];
 let currentPlayerIndex = 0;
 let direction = 1; // 1 voor vooruit, -1 voor achteruit
 
-//Moet nog manier hebben om van vorige pagina de race_name te ontvangen.
 
-let name_race = "Tour de France";
 
 
 
@@ -130,7 +143,7 @@ async function assignCyclistToPlayer(players, cyclist) {
         localStorage.setItem("game", JSON.stringify(game));
 
         //Zorgt dat er altijd genoeg tijd is zodat alle wielrenners kunnen inlanden
-        window.location.href = "../index.html";
+        window.location.href = "../new page/index.html";
       }
     };
   }
