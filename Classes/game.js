@@ -8,14 +8,15 @@ export class Game {
     this.players = players;
     this.current_stage = 0;
     this.all_cyclists = [];
+  }
 
-  fetch(`../Data/2025/${this.race_name}/all_cyclists.json`)
-    .then(res => res.json())
-    .then(data => {
+  async init() {
+    const res = await fetch(`../Data/2025/${this.race_name}/all_cyclists.json`);
+    const data = await res.json();
 
-      this.all_cyclists = data.Cyclist.map(
-        c => new Cyclist(c.cyclist_id, c.name)
-      );
-    });
+    this.all_cyclists = data.Cyclist.map(
+      c => new Cyclist(c.cyclist_id, c.name)
+    );
+    console.log("Cyclists geladen:", this.all_cyclists);
   }
 }

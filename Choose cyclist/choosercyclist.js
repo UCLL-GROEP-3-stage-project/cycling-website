@@ -95,7 +95,7 @@ function nextTurn(playersLength) {
   }
 }
 
-function assignCyclistToPlayer(players, cyclist) {
+async function assignCyclistToPlayer(players, cyclist) {
 
   let player = players[currentPlayerIndex];
 
@@ -107,11 +107,12 @@ function assignCyclistToPlayer(players, cyclist) {
       if(allFull) {
 
         let game = new Game(name_race, players);
+
         await game.init();
         console.log("Game initialized:", game);
         localStorage.setItem("game", JSON.stringify(game));
 
-        //Pas dit aan naar de juiste pagina!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //Zorgt dat er altijd genoeg tijd is zodat alle wielrenners kunnen inlanden
         window.location.href = "../index.html";
       }
     };
