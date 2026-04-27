@@ -4,6 +4,11 @@ document.getElementById("cyclistSelector").style.display = "none";
 //Maakt players aan
 let players = [];
 
+//Manier van kiezen
+let currentPlayerIndex = 0;
+let direction = 1; // 1 voor vooruit, -1 voor achteruit
+
+let count = 0;
 
 //Moet nog manier hebben om van vorige pagina de race_name te ontvangen.
 
@@ -28,6 +33,8 @@ function maakPlayers() {
   players.push(new Player(p3));
   players.push(new Player(p4));
 
+
+  document.getElementById("currentPlayer").textContent = players[currentPlayerIndex].name;
   document.getElementById("playerForm").style.display = "none";
   document.getElementById("cyclistSelector").style.display = "block";
 
@@ -64,27 +71,12 @@ function loadCyclists(Race) {
 
         //Moet nog deftig werkend maken.
         li.addEventListener("click", () => {
-
-          let player = players[0];
-
-          // voeg cyclist toe aan actieve lijst
-          player.list_active.push(cyclist);
-
-          // verwijder uit UI
+          assignCyclistToPlayer(players, cyclist);
           li.remove();
+          console.log(players);
 
-          console.clear();
-          console.log(JSON.stringify(player.list_active, null, 2));
-          console.log("Volgende speler:", players[0].name);
+          count++;
         });
-
-
-
-
-
-
-
-
         list.appendChild(li);
       });
     })
@@ -92,7 +84,50 @@ function loadCyclists(Race) {
 }
 
 
+function nextTurn(playersLength) {
 
+  currentPlayerIndex += direction;
+
+  if (currentPlayerIndex >= playersLength) {
+    currentPlayerIndex = playersLength - 1;
+    direction = -1;
+  }
+
+  if (currentPlayerIndex < 0) {
+    currentPlayerIndex = 0;
+    direction = 1;
+  }
+}
+
+function assignCyclistToPlayer(players, cyclist) {
+
+  let player = players[currentPlayerIndex];
+
+  // eerst proberen active
+  if (!player.addActive(cyclist)) {
+    if(!player.addBenched(cyclist)){
+
+      const allFull = players.every(player => player.list_benched.filter(x => x != null).length === 6);
+      if(allFull) {
+
+        let game = new Game("Tour de France", players);
+        console.log("Game initialized:", game);
+        window.location.href = "../index.html";
+      }
+    };
+  }
+
+  console.clear();
+  console.log(`${player.name} heeft ${cyclist.cyclist_name} gekozen.`);
+
+  nextTurn(players.length);
+
+  document.getElementById("currentPlayer").textContent =
+    players[currentPlayerIndex].name;
+}
+
+
+if (count == players.length * 12) { }
 
 
 

@@ -1,3 +1,0 @@
-als je de speler class aanmaakt.
-    -Zorg dan dat er een lijst is waar per stage de score staat.
-    -Zorg dat er een lijst is waar alle gekozen coureurs instaan en geef die allemaal een property score: die bijhoudt hoeveel punten ze in totaal hebben behaalt.

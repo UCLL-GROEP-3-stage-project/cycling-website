@@ -14,4 +14,30 @@ export class Player {
         this.list_score = new Array(k).fill(0);
       });
   }
+
+
+
+  addActive(cyclist) {
+
+    let index = this.list_active.findIndex(x => x == null);
+
+    if (index !== -1) {
+      this.list_active[index] = cyclist;
+      return true;
+    }
+
+    return false;
+  }
+
+  addBenched(cyclist) {
+
+    let index = this.list_benched.findIndex(x => x == null);
+
+    if (index !== -1) {
+      this.list_benched[index] = cyclist;
+      return true;
+    }
+
+    return false;
+  }
 }
