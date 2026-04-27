@@ -8,8 +8,6 @@ let players = [];
 let currentPlayerIndex = 0;
 let direction = 1; // 1 voor vooruit, -1 voor achteruit
 
-let count = 0;
-
 //Moet nog manier hebben om van vorige pagina de race_name te ontvangen.
 
 
@@ -41,6 +39,7 @@ function maakPlayers() {
   loadCyclists({name: "Tour de France"});
 
   let game = new Game("Tour de France", players);
+  localStorage.setItem("game", JSON.stringify(game));
 
   console.log("Game initialized:", game);
 }
@@ -49,7 +48,6 @@ function maakPlayers() {
 
 
 //Maakt alle cyclisten uit de JSON file klikbaar en verplaatst ze naar de actieve lijst van de speler.
-
 function loadCyclists(Race) { 
   fetch(`../Data/2025/${Race.name}/all_cyclists.json`)
     .then(res => res.json())
@@ -83,7 +81,7 @@ function loadCyclists(Race) {
     .catch(err => console.error("Error loading JSON:", err));
 }
 
-
+//Dit is nextTurn als je snakemethode wilt
 function nextTurn(playersLength) {
 
   currentPlayerIndex += direction;
@@ -112,23 +110,17 @@ function assignCyclistToPlayer(players, cyclist) {
 
         let game = new Game("Tour de France", players);
         console.log("Game initialized:", game);
+
+        //Pas dit aan naar de juiste pagina!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         window.location.href = "../index.html";
       }
     };
   }
 
-  console.clear();
-  console.log(`${player.name} heeft ${cyclist.cyclist_name} gekozen.`);
-
   nextTurn(players.length);
 
-  document.getElementById("currentPlayer").textContent =
-    players[currentPlayerIndex].name;
+  document.getElementById("currentPlayer").textContent = players[currentPlayerIndex].name;
 }
-
-
-if (count == players.length * 12) { }
-
 
 
 
