@@ -22,10 +22,27 @@ import { Game } from "../Classes/game.js";
 function maakPlayers() {
   players = [];
 
-  let p1 = document.getElementById("p1").value;
-  let p2 = document.getElementById("p2").value;
-  let p3 = document.getElementById("p3").value;
-  let p4 = document.getElementById("p4").value;
+  let p1 = document.getElementById("p1").value.trim();
+  let p2 = document.getElementById("p2").value.trim();
+  let p3 = document.getElementById("p3").value.trim();
+  let p4 = document.getElementById("p4").value.trim();
+
+  let names = [p1, p2, p3, p4];
+
+  // Checkt of er lege velden zijn
+  if (names.some(n => n === "")) {
+    alert("Alle spelers moeten een naam hebben!");
+    return;
+  }
+
+  // Checkt of geen dubble namen zijn
+  let uniqueNames = new Set(names);
+
+  if (uniqueNames.size !== names.length) {
+    alert("Je mag geen dubbele namen gebruiken!");
+    return;
+  }
+
 
   players.push(new Player(p1));
   players.push(new Player(p2));
@@ -119,7 +136,6 @@ async function assignCyclistToPlayer(players, cyclist) {
   }
 
   nextTurn(players.length);
-
   document.getElementById("currentPlayer").textContent = players[currentPlayerIndex].name;
 }
 
