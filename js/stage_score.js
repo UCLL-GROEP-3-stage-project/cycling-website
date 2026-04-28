@@ -6,6 +6,11 @@ let game;
 if (savedGame) {
   game = JSON.parse(savedGame);
   console.log("Game geladen:", game);
+
+    //text inladen
+    document.getElementById("stageText").textContent = "Stage: " + game.current_stage;
+
+
 } else {
   alert("Geen opgeslagen game gevonden");
 }
