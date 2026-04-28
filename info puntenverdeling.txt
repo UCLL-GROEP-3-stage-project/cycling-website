@@ -1,38 +1,5 @@
 Puntenverdeling
-
-per rit:
-    -10 punten per trui
     
-score top 25:
-    -100
-    -80
-    -65
-    -55
-    -45
-    -35
-    -30
-    -25
-    -20
-    -17
-    -15
-    -14
-    -13
-    -12
-    -11
-    -10
-    -9
-    -8
-    -7
-    -6
-    -5
-    -4
-    -3
-    -2
-    -1
-
-
-
-
 Eindafrekening:
 
 algemeen klassement:
