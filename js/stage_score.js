@@ -162,13 +162,37 @@ fetch(base_url + "/leaders.json")
 
 
 
-//Knop
-document.getElementById("goBtn").addEventListener("click", () => {
+
+
+//Checken welke stage we zitten.
+if (game.current_stage == game.players[0].list_score.length) {
+    document.getElementById("nextStage").style.display = "none";
+    document.getElementById("endScore").style.display = "block";
+} else {
+    document.getElementById("nextStage").style.display = "block";
+    document.getElementById("endScore").style.display = "none";
+}
+
+
+
+
+
+
+//Knop voor volgende stage
+document.getElementById("nextStage").addEventListener("click", () => {
     game.current_stage += 1;
     localStorage.setItem("game", JSON.stringify(game));
 
     window.location.href = "stage_score.html";
 });
+
+//Knop voor eindafrekening
+document.getElementById("endScore").addEventListener("click", () => {
+    localStorage.setItem("game", JSON.stringify(game));
+
+    window.location.href = "eindafrekening.html";
+});
+
 
 
 
