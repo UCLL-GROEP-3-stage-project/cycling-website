@@ -1,0 +1,25 @@
+{
+  "Stage": [
+    { "stage_id": 1, "name": "Stage 1 | Durrës - Tirana" },
+    { "stage_id": 2, "name": "Stage 2 (ITT) | Tirana - Tirana" },
+    { "stage_id": 3, "name": "Stage 3 | Vlorë - Vlorë" },
+    { "stage_id": 4, "name": "Stage 4 | Alberobello (Pietramadre) - Lecce" },
+    { "stage_id": 5, "name": "Stage 5 | Ceglie Messapica - Matera" },
+    { "stage_id": 6, "name": "Stage 6 | Potenza - Napoli" },
+    { "stage_id": 7, "name": "Stage 7 | Castel di Sangro - Tagliacozzo (Marsia)" },
+    { "stage_id": 8, "name": "Stage 8 | Giulianova - Castelraimondo" },
+    { "stage_id": 9, "name": "Stage 9 | Gubbio - Siena" },
+    { "stage_id": 10, "name": "Stage 10 (ITT) | Lucca - Pisa" },
+    { "stage_id": 11, "name": "Stage 11 | Viareggio - Castelnovo ne' Monti" },
+    { "stage_id": 12, "name": "Stage 12 | Modena - Viadana (Oglio-Po)" },
+    { "stage_id": 13, "name": "Stage 13 | Rovigo - Vicenza" },
+    { "stage_id": 14, "name": "Stage 14 | Treviso - Nova Gorica" },
+    { "stage_id": 15, "name": "Stage 15 | Fiume Veneto - Asiago" },
+    { "stage_id": 16, "name": "Stage 16 | Piazzola sul Brenta - San Valentino (Brentonico)" },
+    { "stage_id": 17, "name": "Stage 17 | San Michele all’Adige (Fondazione Edmund Mach) - Bormio" },
+    { "stage_id": 18, "name": "Stage 18 | Morbegno - Cesano Maderno" },
+    { "stage_id": 19, "name": "Stage 19 | Biella - Champoluc" },
+    { "stage_id": 20, "name": "Stage 20 | Verrès - Sestrière (Vialattea)" },
+    { "stage_id": 21, "name": "Stage 21 | Roma - Roma" }
+  ]
+}
