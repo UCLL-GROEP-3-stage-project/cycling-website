@@ -1,7 +1,3 @@
-
-
-
-
 let current_race;
 
 
@@ -9,7 +5,7 @@ let current_race;
 
 //Pak alle mogelijke races
 
-  fetch("./Data/2025/races.json")
+  fetch("/Data/2025/races.json")
   .then(res => res.json())
   .then(data => {
         const list = document.getElementById("races");
@@ -32,7 +28,7 @@ let current_race;
                 localStorage.setItem("selectedRace", JSON.stringify(Race.name));
 
                 // naar andere pagina
-                window.location.href = "/Choose cyclist/choosercyclist.html";
+                window.location.href = "/pages/choosercyclist.html";
             });
 
 

@@ -29,8 +29,8 @@ let direction = 1; // 1 voor vooruit, -1 voor achteruit
 
 
 
-import { Player } from "../Classes/player.js";
-import { Game } from "../Classes/game.js";
+import { Player } from "./Classes/player.js";
+import { Game } from "./Classes/game.js";
 
 
 //Verbinding html die een player aanmaakt en de cyclist selector zichtbaar maakt.
@@ -145,7 +145,7 @@ async function assignCyclistToPlayer(players, cyclist) {
         localStorage.setItem("game", JSON.stringify(game));
 
         //Zorgt dat er altijd genoeg tijd is zodat alle wielrenners kunnen inlanden
-        window.location.href = "../new page/index.html";
+        window.location.href = "/pages/stage_score.html";
       }
     };
   }
