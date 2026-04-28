@@ -6,7 +6,7 @@ export class Game {
   constructor(race_name, players) {
     this.race_name = race_name;
     this.players = players;
-    this.current_stage = 0;
+    this.current_stage = 1;
     this.all_cyclists = [];
   }
 
