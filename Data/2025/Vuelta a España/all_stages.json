@@ -1,0 +1,25 @@
+{
+  "Stage": [
+    { "stage_id": 1, "name": "Stage 1 | Torino-Reggia di Venaria - Novara" },
+    { "stage_id": 2, "name": "Stage 2 | Alba - Limone Piemonte" },
+    { "stage_id": 3, "name": "Stage 3 | San Maurizio Canavese - Ceres" },
+    { "stage_id": 4, "name": "Stage 4 | Susa - Voiron" },
+    { "stage_id": 5, "name": "Stage 5 (TTT) | Figueres - Figueres" },
+    { "stage_id": 6, "name": "Stage 6 | Olot - Pal. Andorra" },
+    { "stage_id": 7, "name": "Stage 7 | Andorra la Vella - Cerler. Huesca La Magia" },
+    { "stage_id": 8, "name": "Stage 8 | Monzón Templario - Zaragoza" },
+    { "stage_id": 9, "name": "Stage 9 | Alfaro - Estación de Esquí de Valdezcaray" },
+    { "stage_id": 10, "name": "Stage 10 | Parque de la Naturaleza Sendaviva - El Ferial Larra Belagua" },
+    { "stage_id": 11, "name": "Stage 11 | Bilbao - Bilbao" },
+    { "stage_id": 12, "name": "Stage 12 | Laredo - Los Corrales de Buelna" },
+    { "stage_id": 13, "name": "Stage 13 | Cabezón de la Sal - L'Angliru" },
+    { "stage_id": 14, "name": "Stage 14 | Avilés - La Farrapona. Lagos de Somiedo" },
+    { "stage_id": 15, "name": "Stage 15 | A Veiga/Vegadeo - Monforte de Lemos" },
+    { "stage_id": 16, "name": "Stage 16 | Poio - Mos. Castro de Herville" },
+    { "stage_id": 17, "name": "Stage 17 | O Barco de Valdeorras - Alto de El Morredero" },
+    { "stage_id": 18, "name": "Stage 18 (ITT) | Valladolid - Valladolid" },
+    { "stage_id": 19, "name": "Stage 19 | Rueda - Guijuelo" },
+    { "stage_id": 20, "name": "Stage 20 | Robledo de Chavela - Bola del Mundo. Puerto de Navacerrada" },
+    { "stage_id": 21, "name": "Stage 21 | Alalpardo - Madrid" }
+  ]
+}

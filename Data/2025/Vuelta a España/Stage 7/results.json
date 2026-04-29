@@ -1,0 +1,29 @@
+{
+  "StageResult": [
+    { "position": 1, "cyclist_id": 50 },
+    { "position": 2, "cyclist_id": 107 },
+    { "position": 3, "cyclist_id": 48 },
+    { "position": 4, "cyclist_id": 147 },
+    { "position": 5, "cyclist_id": 130 },
+    { "position": 6, "cyclist_id": 57 },
+    { "position": 7, "cyclist_id": 116 },
+    { "position": 8, "cyclist_id": 81 },
+    { "position": 9, "cyclist_id": 53 },
+    { "position": 10, "cyclist_id": 9 },
+    { "position": 11, "cyclist_id": 143 },
+    { "position": 12, "cyclist_id": 46 },
+    { "position": 13, "cyclist_id": 32 },
+    { "position": 14, "cyclist_id": 98 },
+    { "position": 15, "cyclist_id": 66 },
+    { "position": 16, "cyclist_id": 67 },
+    { "position": 17, "cyclist_id": 45 },
+    { "position": 18, "cyclist_id": 91 },
+    { "position": 19, "cyclist_id": 71 },
+    { "position": 20, "cyclist_id": 41 },
+    { "position": 21, "cyclist_id": 55 },
+    { "position": 22, "cyclist_id": 125 },
+    { "position": 23, "cyclist_id": 132 },
+    { "position": 24, "cyclist_id": 86 },
+    { "position": 25, "cyclist_id": 64 }
+  ]
+}
