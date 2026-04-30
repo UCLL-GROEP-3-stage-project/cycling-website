@@ -1,40 +1,27 @@
-//Maakt cyclist selector ontzichtbaar
 document.getElementById("cyclistSelector").style.display = "none";
 
-//localstorage data ophalen
-let savedRace  = localStorage.getItem("selectedRace");
-
+let savedRace = localStorage.getItem("selectedRace");
 let name_race;
 
 if (savedRace) {
   name_race = JSON.parse(savedRace);
-  console.log("Race geladen:", name_race);
-  localStorage.removeItem("selectedRace");
 } else {
   console.log("Geen opgeslagen race gevonden");
 }
 
-
-
-
-
-//Maakt players aan
 let players = [];
-
-//Manier van kiezen
 let currentPlayerIndex = 0;
-let direction = 1; // 1 voor vooruit, -1 voor achteruit
-
-
-
-
+let direction = 1;
 
 import { Player } from "./Classes/player.js";
 import { Game } from "./Classes/game.js";
 
-
-//Verbinding html die een player aanmaakt en de cyclist selector zichtbaar maakt.
 function maakPlayers() {
+
+  document.querySelectorAll("#tablesContainer input").forEach(input => {
+    input.disabled = true;
+  });
+
   players = [];
 
   let p1 = document.getElementById("p1").value.trim();
@@ -44,76 +31,52 @@ function maakPlayers() {
 
   let names = [p1, p2, p3, p4];
 
-  // Checkt of er lege velden zijn
   if (names.some(n => n === "")) {
     alert("Alle spelers moeten een naam hebben!");
     return;
   }
 
-  // Checkt of geen dubble namen zijn
-  let uniqueNames = new Set(names);
-
-  if (uniqueNames.size !== names.length) {
+  if (new Set(names).size !== names.length) {
     alert("Je mag geen dubbele namen gebruiken!");
     return;
   }
 
+  players = names.map(name => new Player(name));
 
-  players.push(new Player(p1));
-  players.push(new Player(p2));
-  players.push(new Player(p3));
-  players.push(new Player(p4));
-
-
-  document.getElementById("currentPlayer").textContent = players[currentPlayerIndex].name;
-  document.getElementById("playerForm").style.display = "none";
+  updateCurrentPlayerUI();
+  document.getElementById("playerbutton").style.display = "none";
   document.getElementById("cyclistSelector").style.display = "block";
 
-  loadCyclists({name: name_race});
+  loadCyclists({ name: name_race });
 
-  let game = new Game(name_race, players);
+  const game = new Game(name_race, players);
   localStorage.setItem("game", JSON.stringify(game));
-
-  console.log("Game initialized:", game);
 }
 
-
-
-
-//Maakt alle cyclisten uit de JSON file klikbaar en verplaatst ze naar de actieve lijst van de speler.
-function loadCyclists(Race) { 
+function loadCyclists(Race) {
   fetch(`../Data/2025/${Race.name}/all_cyclists.json`)
     .then(res => res.json())
     .then(data => {
       const list = document.getElementById("cyclistList");
-
-      // lijst leegmaken
       list.innerHTML = "";
 
       data.Cyclist.forEach(cyclist => {
         const li = document.createElement("li");
         li.textContent = cyclist.name;
-
-        // 👇 klikbaar maken
         li.style.cursor = "pointer";
 
-
-
-
-        //Moet nog deftig werkend maken.
         li.addEventListener("click", () => {
-          assignCyclistToPlayer(players, cyclist);
+          assignCyclistToPlayer(cyclist);
           li.remove();
         });
+
         list.appendChild(li);
       });
     })
     .catch(err => console.error("Error loading JSON:", err));
 }
 
-//Dit is nextTurn als je snakemethode wilt
 function nextTurn(playersLength) {
-
   currentPlayerIndex += direction;
 
   if (currentPlayerIndex >= playersLength) {
@@ -127,35 +90,64 @@ function nextTurn(playersLength) {
   }
 }
 
-async function assignCyclistToPlayer(players, cyclist) {
+async function assignCyclistToPlayer(cyclist) {
 
-  let player = players[currentPlayerIndex];
+  const playerIndex = currentPlayerIndex;
+  const player = players[playerIndex];
 
-  // eerst proberen active
-  if (!player.addActive(cyclist)) {
-    if(!player.addBenched(cyclist)){
+  const playerBox = document.querySelectorAll(".table-box")[playerIndex];
 
-      const allFull = players.every(player => player.list_benched.filter(x => x != null).length === 6);
-      if(allFull) {
+  const activeList = playerBox.querySelector(".active-list");
+  const benchedList = playerBox.querySelector(".benched-list");
 
-        let game = new Game(name_race, players);
+  const li = document.createElement("li");
+  li.textContent = cyclist.name;
 
-        await game.init();
-        console.log("Game initialized:", game);
-        localStorage.setItem("game", JSON.stringify(game));
+  if (player.addActive(cyclist)) {
+    activeList.appendChild(li);
+  } else if (player.addBenched(cyclist)) {
+    benchedList.appendChild(li);
+  } else {
 
-        //Zorgt dat er altijd genoeg tijd is zodat alle wielrenners kunnen inlanden
-        window.location.href = "/pages/stage_score.html";
-      }
-    };
+    const allFull = players.every(p =>
+      p.list_benched.filter(x => x != null).length == 6
+    );
+
+    if (allFull) {
+      const game = new Game(name_race, players);
+      await game.init();
+      localStorage.setItem("game", JSON.stringify(game));
+      window.location.href = "/pages/stage_score.html";
+      return;
+    }
   }
 
   nextTurn(players.length);
-  document.getElementById("currentPlayer").textContent = players[currentPlayerIndex].name;
+
+  updateCurrentPlayerUI();
 }
 
 
+function updateCurrentPlayerUI() {
+
+  const span = document.getElementById("currentPlayer");
+  const h2 = document.querySelector("#cyclistSelector h2");
+
+  const colors = [
+    "--player-1",
+    "--player-2",
+    "--player-3",
+    "--player-4"
+  ];
+
+  if (span && players.length > 0) {
+    span.textContent = players[currentPlayerIndex].name;
+  }
+
+  if (h2) {
+    h2.style.backgroundColor = `var(${colors[currentPlayerIndex]})`;
+  }
+}
 
 
-//buttons
 document.querySelector("#playerbutton").addEventListener("click", maakPlayers);

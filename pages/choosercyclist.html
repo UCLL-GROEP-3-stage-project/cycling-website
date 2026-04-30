@@ -4,34 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mijn Website</title>
-
+    <title>Choose Cyclists</title>
     <link rel="stylesheet" href="/styles/choose_cyclist.css">
-
 </head>
 
 <body>
-    <div id="playerForm">
-    
-        <h1>Maak 4 players</h1>
-    
-        <input id="p1" placeholder="Player 1"   required>
-        <input id="p2" placeholder="Player 2"   required>
-        <input id="p3" placeholder="Player 3"   required>
-        <input id="p4" placeholder="Player 4"   required>
-    
-        <button id="playerbutton">Start</button>
-    
-    </div>
 
-    <div id="cyclistSelector">
-        <h2>Beurt: <span id="currentPlayer">-</span></h2>
-        
-        <ul id="cyclistList"></ul>
-    
-    </div>
+    <main>
+
+        <section id="players">
+            <div id="tablesContainer">
+                <div class="table-box">
+                    <input id="p1" placeholder="Player 1" required>
+                
+                    <div class="divider"></div>
+                
+                    <ul class="player-list active-list"></ul>
+                
+                    <div class="divider small"></div>
+                
+                    <ul class="player-list benched-list"></ul>
+                </div>
+
+                <div class="table-box">
+                    <input id="p2" placeholder="Player 1" required>
+                
+                    <div class="divider"></div>
+                
+                    <ul class="player-list active-list"></ul>
+                
+                    <div class="divider small"></div>
+                
+                    <ul class="player-list benched-list"></ul>
+                </div>
+
+                <div class="table-box">
+                    <input id="p3" placeholder="Player 1" required>
+                
+                    <div class="divider"></div>
+                
+                    <ul class="player-list active-list"></ul>
+                
+                    <div class="divider small"></div>
+                
+                    <ul class="player-list benched-list"></ul>
+                </div>
+
+                <div class="table-box">
+                    <input id="p4" placeholder="Player 1" required>
+                
+                    <div class="divider"></div>
+                
+                    <ul class="player-list active-list"></ul>
+                
+                    <div class="divider small"></div>
+                
+                    <ul class="player-list benched-list"></ul>
+                </div>
+            </div>
+
+            <button id="playerbutton">Start</button>
+        </section>
+
+        <section id="cyclistSelector" class="hidden">
+            <h2>Beurt: <span id="currentPlayer">-</span></h2>
+            <ul id="cyclistList"></ul>
+        </section>
+
+    </main>
 
     <script type="module" src="/js/choosercyclist.js"></script>
+
 </body>
 
 </html>
